@@ -1,0 +1,29 @@
+{
+  "name": "@modularitybg/http_build_query",
+  "version": "0.0.1",
+  "description": "Javascript port of PHP http_build_query",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "publish": "npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Modularity-Bulgaria/http_build_query.git"
+  },
+  "keywords": [
+    "PHP",
+    "HTTP",
+    "http_query_builder",
+    "RFC1738"
+  ],
+  "author": "Modularity Bulgaria",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Modularity-Bulgaria/http_build_query/issues"
+  },
+  "homepage": "https://github.com/Modularity-Bulgaria/http_build_query#readme",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
