@@ -1,10 +1,11 @@
 {
   "name": "@modularitybg/http_build_query",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Javascript port of PHP http_build_query",
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "bump-version": "npm version --commit-hooks=false --git-tag-version=false --force",
     "publish-public": "npm publish --access public"
   },
   "repository": {
