@@ -1,7 +1,7 @@
 # This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
 # For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
 
-name: publish to github packages
+name: Publish to github packages
 
 on:
   release:
@@ -33,6 +33,20 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: 'modularity-bulgaria'
       - run: npm ci
+      - run: echo registry=https://npm.pkg.github.com/modularity-bulgaria >> .npmrc
+      - name: Insert repository owner as scope into package name
+        run: |
+          node <<EOF 
+          const fs = require('fs').promises;
+          fs.readFile('package.json', 'utf8').then((data) => JSON.parse(data)).then((json) => {
+            json.name = '@$(echo "$GITHUB_REPOSITORY" | sed 's/\/.\+//')/' + json.name;
+            console.info('Package name changed to %s', json.name);
+            return fs.writeFile('package.json', JSON.stringify(json), 'utf8');
+          }).catch(error => {
+              console.error(error);
+              process.exit(1);
+          });
+          EOF
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
