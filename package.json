@@ -1,6 +1,6 @@
 {
   "name": "@modularitybg/http_build_query",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "Javascript port of PHP http_build_query",
   "main": "index.js",
   "scripts": {
