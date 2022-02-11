@@ -15,13 +15,16 @@
   "keywords": [
     "PHP",
     "HTTP",
-    "http_query_builder",
+    "http_build_query",
     "RFC1738"
   ],
   "author": "Modularity Bulgaria",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Modularity-Bulgaria/http_build_query/issues"
+  },
+  "engines": {
+    "node": ">= ^12.x"
   },
   "homepage": "https://github.com/Modularity-Bulgaria/http_build_query#readme",
   "devDependencies": {
