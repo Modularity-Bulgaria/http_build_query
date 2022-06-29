@@ -28,6 +28,6 @@
   },
   "homepage": "https://github.com/Modularity-Bulgaria/http_build_query#readme",
   "devDependencies": {
-    "jest": "^27.5.1"
+    "jest": "^28.1.2"
   }
 }
