@@ -1,5 +1,16 @@
+const chunk = (str, size) => {
+  const numChunks = Math.ceil(str.length / size);
+  const chunks = new Array(numChunks);
+
+  for (let i = 0, o = 0; i < numChunks; ++i, o += size) {
+    chunks[i] = str.substr(o, size);
+  }
+
+  return chunks;
+};
+
 function encodeUTFAlphabet(data) {
-  const value = String(data);
+  const value = data instanceof Object ? JSON.stringify(data) : String(data);
   return value
     .replace(/ |\t|\s|\r|\n/gi, "")
     .split("")
@@ -22,7 +33,10 @@ function percentEncoding(value) {
         return "+";
       }
       if (!character.match(/\p{L}|\p{N}/u)) {
-        const hex = character.charCodeAt().toString(16);
+        let hex = Buffer.from(character).toString("hex");
+        if (hex.length > 2) {
+          hex = chunk(hex, 2).join("%");
+        }
         return `%${hex}`.toUpperCase();
       }
       return character;
