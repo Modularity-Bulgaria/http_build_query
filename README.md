@@ -9,8 +9,8 @@ Have you ever found yourself needing to connect to a legacy PHP API that require
 
 This library will enable you to do so with ease :beer:
 
-## Requirements
-- NodeJS 12.x
+<## Requirements
+- NodeJS 14.x
 
 ## Installation
 
