@@ -24,7 +24,7 @@
     "url": "https://github.com/Modularity-Bulgaria/http_build_query/issues"
   },
   "engines": {
-    "node": ">= 14.x"
+    "node": ">= 20.x"
   },
   "homepage": "https://github.com/Modularity-Bulgaria/http_build_query#readme",
   "devDependencies": {
